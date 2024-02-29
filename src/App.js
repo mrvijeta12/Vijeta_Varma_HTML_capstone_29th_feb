@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Appname from './Appname'
+import { Routes, Route } from 'react-router-dom'
 
-function App() {
+import Home from './Components/Home'
+import Favorite from './Components/Favorite'
+import Order from './Components/Order'
+import Contact from './Components/Contact'
+import Cart from './Components/Cart'
+import "./Components/Style.css"
+import Form from './Components/Form'
+
+const  App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Appname/>
+  
+      {
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/favorites' element={<Favorite/>} />
+          <Route path='/orders' element={<Order/>} />
+          <Route path='/contact' element={<Contact/>} />
+          <Route path='/cart' element={<Cart/>} />
+          {/* <Route path='/form' element={<Form/>} /> */}
+
+
+    
+        </Routes>
+      }
+
+      {/* <Home/> */}
+
+      
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
