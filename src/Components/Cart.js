@@ -3,13 +3,17 @@ import ProductContext from "../Context/ProductContext";
 import { useContext } from "react";
 import { MdCancel } from "react-icons/md";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+// import form from "./Form.js"
+import { Link } from "react-router-dom";
 
 
 const Cart = () => {
   const { cartItems, setCartItems, setForm, checkout } = useContext(ProductContext);
   const [quantity, setQuantity] = useState(1);
   const [total, setTotal] = useState();
-  // console.log(total)
+  const navigate = useNavigate()
+
  
 
   const inc = (productId) => {
@@ -71,7 +75,16 @@ const Cart = () => {
               <div>
                 {
 
-                  total>0 && <p>${total.toFixed(2)}</p>
+                  total>0 && (
+                    <div>
+                      <p>${total.toFixed(2)}</p>
+                      {/* <button onClick={()=>navigate("/form")}>Checkout</button> */}
+                      <Link to="/form">
+                        <button>Chckout</button>
+                      </Link>
+                      
+                    </div>
+                  ) 
 
                 }
 

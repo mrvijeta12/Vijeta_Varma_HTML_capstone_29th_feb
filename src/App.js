@@ -9,6 +9,7 @@ import Contact from './Components/Contact'
 import Cart from './Components/Cart'
 import "./Components/Style.css"
 import Form from './Components/Form'
+import Congreates from './Components/Congreates'
 
 const  App=()=> {
   return (
@@ -22,7 +23,9 @@ const  App=()=> {
           <Route path='/orders' element={<Order/>} />
           <Route path='/contact' element={<Contact/>} />
           <Route path='/cart' element={<Cart/>} />
-          {/* <Route path='/form' element={<Form/>} /> */}
+          <Route path='/form' element={<Form/>} /> 
+          <Route path='/congrates' element={<Congreates/>} />  
+
 
 
     
