@@ -6,10 +6,10 @@ import { useEffect } from "react";
 
 
 const Cart = () => {
-  const { cartItems, setCartItems, setForm, checkout } =
-    useContext(ProductContext);
+  const { cartItems, setCartItems, setForm, checkout } = useContext(ProductContext);
   const [quantity, setQuantity] = useState(1);
   const [total, setTotal] = useState();
+  // console.log(total)
  
 
   const inc = (productId) => {
@@ -32,10 +32,13 @@ const Cart = () => {
   }
 
   function calculateTotal() {
-    const total = cartItems.reduce((acc, citems) => {
-      return acc + ((quantity[citems.id] || 1) * citems.price);
-    }, 0);
-    setTotal(total);
+
+      const total = cartItems.reduce((acc, citems) => {
+        return acc + ((quantity[citems.id] || 1) * citems.price);
+      },0);
+      setTotal(total);
+      
+    
   }
 
  
@@ -66,7 +69,13 @@ const Cart = () => {
           ))}
 
               <div>
-              <p>${(total).toFixed(2)}</p>
+                {
+
+                  total>0 && <p>${total.toFixed(2)}</p>
+
+                }
+
+                  
               </div>
      
       </div>
