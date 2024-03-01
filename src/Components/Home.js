@@ -7,7 +7,7 @@ import Contact from "./Contact";
 
 
 const Home = () => {
-  const { fetchProducts, setFetchProducts,setCartItems,cartItems} = useContext(ProductContext);
+  const { fetchProducts, setFetchProducts,setCartItems,cartItems,setCheckout,checkout} = useContext(ProductContext);
 
   const [preview, setPreview] = useState([]);
   const [view, setView] = useState(false);
@@ -38,6 +38,8 @@ const Home = () => {
     setView(true)
     const updateCart = [...cartItems,pitems]
    setCartItems(updateCart)
+   setCheckout(true)
+   setView(false)
   //  console.log(cartItems)
   //  setView(true)
   }

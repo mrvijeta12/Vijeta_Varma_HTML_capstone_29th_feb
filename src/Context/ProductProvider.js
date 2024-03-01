@@ -5,6 +5,7 @@ const ProductProvider = ({ children }) => {
 const [ fetchProducts,setFetchProducts] = useState(null);
 const[cartItems,setCartItems] = useState([])
 const [ form,setForm] =  useState(false);
+const [checkout,setCheckout] = useState(false)
 
 // console.log(cartItems)
 
@@ -17,6 +18,8 @@ const [ form,setForm] =  useState(false);
        setCartItems:setCartItems,
        form:form,
        setForm:setForm,
+       checkout:checkout,
+       setCheckout:setCheckout,
        
       }}
     >
